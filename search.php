@@ -58,6 +58,7 @@ if (isset($_GET['q']) && !empty($_GET['q'])) {
 </head>
 <body>
     <div class="container">
+        <a href="index.php">Zurück zur Hauptseite</a>
         <h1>Suche</h1>
         <form action="search.php" method="post">
             <input type="text" name="search" placeholder="Suche nach Benutzern">
