@@ -5,6 +5,13 @@ session_destroy();
 if (file_exists('database.db')) {
     unlink('database.db');
 }
+if (!file_exists('.htaccess')) {
+    file_put_contents(".htaccess",'<Files "database.db">
+    Order deny,allow
+    Deny from all
+</Files>
+');
+}
 
 // Datenbankdatei erstellen bzw. öffnen
 $database = new SQLite3('database.db');
