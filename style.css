@@ -323,10 +323,28 @@ form input[type="submit"]:hover {
   text-decoration: none;
 }
 
-.post-date {
+.post-username {
+  position: relative;
+  top: -10px;
+  font-size: 25px;
+  margin-right: 20px;
   display: inline-block;
   padding: 2px 2px;
   background-color: #ff6f00;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+}
+.post-username a {
+  color: #FFF;
+}
+.post-date {
+  display: inline-block;
+  padding: 2px 2px;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -529,18 +547,18 @@ input[type="submit"]:hover {
 .slideIn {
   animation-name: slideIn;
 }
-.post-username {
-  font-size: 25px;
-  margin-right: 20px;
-}
 .user {
   font-size: 25px;
   display: inline;
+  margin-top: 30px;
+}
+.user img {
+  position: relative;
+  top: 6px;
 }
 .user a{
   width: 100%;
   font-size: 25px;
-  display: inline-block;
   background-color: #ff6f00;
   padding: 10px 20px;
   color: #fff;
@@ -554,7 +572,6 @@ input[type="submit"]:hover {
 }
 .user a:hover{
   font-size: 25px;
-  display: inline-block;
   background-color: #70a1ff;
   color: #fff;
   border: none;

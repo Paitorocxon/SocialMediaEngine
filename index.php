@@ -160,8 +160,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <a href="profile.php">Profil</a>
         <a href="search.php">Suche</a>
         <a href="logout.php">Logout</a>
-    </div>
-    <h1>Startseite</h1>
+    </div><br><br>
+    <h1>Feed</h1>
     <form class="createpost" method="post" action="" enctype="multipart/form-data">
         <textarea name="post" placeholder="Schreibe deinen Beitrag"  rows="5" cols="40"></textarea>
         <input type="file" name="image">
