@@ -104,16 +104,6 @@ $database->exec($query);
 $query = "ALTER TABLE follows ADD COLUMN followed_username TEXT";
 $database->exec($query);
 
-// Beispielbenutzer und Beiträge einfügen (optional)
-$query = "INSERT OR IGNORE INTO users (username, password, email, full_name) VALUES
-    ('user1', 'pass1', 'user1@example.com', 'User 1'),
-    ('user2', 'pass2', 'user2@example.com', 'User 2')";
-$database->exec($query);
-
-$query = "INSERT OR IGNORE INTO posts (username, content) VALUES
-    ('user1', 'Hallo, ich bin User 1!'),
-    ('user2', 'Hallo, ich bin User 2!')";
-$database->exec($query);
 
 // Datenbankverbindung schließen
 $database->close();

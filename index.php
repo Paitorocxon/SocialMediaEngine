@@ -134,7 +134,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html>
 <head>
     <title>Startseite</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <!--<link rel="stylesheet" type="text/css" href="style.css">-->
+    <script>
+    function loadStylesheet() {
+      var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      var stylesheet = document.createElement('link');
+      stylesheet.rel = 'stylesheet';
+
+      if (screenWidth <= 767) {
+        // Pfad zum Stylesheet für Smartphones
+        stylesheet.href = 'styleS.css';
+      } else {
+        // Pfad zum Standard-Stylesheet für Desktop
+        stylesheet.href = 'style.css';
+      }
+
+      document.head.appendChild(stylesheet);
+    }
+    window.addEventListener('DOMContentLoaded', loadStylesheet);
+  </script>
 </head>
 <body>
 <div class="container">
@@ -145,7 +163,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
     <h1>Startseite</h1>
     <form class="createpost" method="post" action="" enctype="multipart/form-data">
-        <textarea name="post" placeholder="Schreibe deinen Beitrag"></textarea>
+        <textarea name="post" placeholder="Schreibe deinen Beitrag"  rows="5" cols="40"></textarea>
         <input type="file" name="image">
         <button type="submit">Beitrag veröffentlichen</button>
     </form>

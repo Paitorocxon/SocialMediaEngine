@@ -33,7 +33,7 @@ body {
   
   header h1 {
     margin: 0;
-    font-size: 24px;
+    font-size:25px;
     font-weight: 600;
   }
   
@@ -45,7 +45,7 @@ body {
     color: #fff;
     border: none;
     border-radius: 6px;
-    font-size: 14px;
+    font-size:25px;
     font-weight: 500;
     text-align: center;
     text-decoration: none;
@@ -64,7 +64,7 @@ body {
     color: #fff;
     border: none;
     border-radius: 6px;
-    font-size: 14px;
+    font-size:25px;
     font-weight: 500;
     text-align: center;
     text-decoration: none;
@@ -87,7 +87,7 @@ body {
     color: #ff6f00;
     border: none;
     border-radius: 4px;
-    font-size: 14px;
+    font-size:40px;
     width: 100%;
   }
   
@@ -97,7 +97,7 @@ body {
     color: #fff;
     border: none;
     border-radius: 6px;
-    font-size: 14px;
+    font-size:25px;
     font-weight: 500;
     text-align: center;
     text-decoration: none;
@@ -196,7 +196,7 @@ form {
 form textarea, form input[type="submit"] {
     width: 100%;
     padding: 0px;
-    font-size: 16px;
+    font-size:25px;
     margin-bottom: 10px;
     overflow: auto;
     resize: none; /* Hinzugefügte Zeile */
@@ -267,12 +267,12 @@ form input[type="submit"]:hover {
 
 .comment-username {
     display: inline-block;
-    padding: 2px 2px;
+    padding: 0px;
     background-color: #ff6f00;
     color: #fff;
     border: none;
     border-radius: 6px;
-    font-size: 14px;
+    font-size:24px;
     font-weight: 500;
     text-align: center;
     text-decoration: none;
@@ -286,7 +286,7 @@ form input[type="submit"]:hover {
     color: #4b4b4b;
     border: none;
     border-radius: 6px;
-    font-size: 14px;
+    font-size:25px;
     font-weight: 500;
     text-align: center;
     text-decoration: none;
@@ -317,7 +317,7 @@ form input[type="submit"]:hover {
   color: #ffffff;
   border: none;
   border-radius: 6px;
-  font-size: 14px;
+  font-size:25px;
   font-weight: 500;
   text-align: center;
   text-decoration: none;
@@ -330,7 +330,7 @@ form input[type="submit"]:hover {
   color: #fff;
   border: none;
   border-radius: 6px;
-  font-size: 14px;
+  font-size:25px;
   font-weight: 500;
   text-align: center;
   text-decoration: none;
@@ -356,17 +356,19 @@ form input[type="submit"]:hover {
   border: none;
   border-bottom: 5px solid #ff6f00;
   border-radius: 6px;
-  font-size: 21px;
+  font-size:35pt;
   font-weight: 500;
   text-align: center;
   text-decoration: none;
 }
 .top-menu a {
+  margin-left: 20px;
+  margin-right: 20px;
+  
   background-color: #ff6f00;
   color: #ffffff;
   border: none;
   border-radius: 6px;
-  font-size: 21px;
   font-weight: 500;
   text-align: center;
   text-decoration: none;
@@ -379,7 +381,6 @@ form input[type="submit"]:hover {
   color: #003eb1;
   border: none;
   border-radius: 6px;
-  font-size: 21px;
   font-weight: 500;
   text-align: center;
   text-decoration: none;
@@ -422,7 +423,7 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 24px;
+  font-size:25px;
   font-weight: 600;
 }
 
@@ -434,7 +435,7 @@ header h1 {
   color: #fff;
   border: none;
   border-radius: 6px;
-  font-size: 14px;
+  font-size:25px;
   font-weight: 500;
   text-align: center;
   text-decoration: none;
@@ -457,7 +458,7 @@ input[type="password"] {
   color: #ff6f00;
   border: none;
   border-radius: 4px;
-  font-size: 14px;
+  font-size:25px;
   width: 100%;
 }
 
@@ -467,7 +468,7 @@ input[type="submit"] {
   color: #fff;
   border: none;
   border-radius: 6px;
-  font-size: 20px;
+  font-size:25px;
   font-weight: 500;
   text-align: center;
   text-decoration: none;
@@ -529,17 +530,25 @@ input[type="submit"]:hover {
 .slideIn {
   animation-name: slideIn;
 }
+
+
 .post-username {
   font-size: 25px;
   margin-right: 20px;
 }
+
+.givecomment {
+  font-size: 30px;
+}
+
+
+
 .user {
   font-size: 25px;
   display: inline;
 }
 .user a{
   width: 100%;
-  font-size: 25px;
   display: inline-block;
   background-color: #ff6f00;
   padding: 10px 20px;
@@ -552,18 +561,3 @@ input[type="submit"]:hover {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.user a:hover{
-  font-size: 25px;
-  display: inline-block;
-  background-color: #70a1ff;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-weight: 500;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-
-

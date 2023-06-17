@@ -24,11 +24,11 @@ if (isset($_GET['q']) && !empty($_GET['q'])) {
     $search_query = $_GET['q'];
 
     // Benutzer suchen
-    $searchQuery = "SELECT username FROM users WHERE username LIKE '%$search_query%'";
+    $searchQuery = "SELECT username, profile_picture FROM users WHERE username LIKE '%$search_query%'";
     $searchResult = $database->query($searchQuery);
 } else {
     // Alle Benutzer auflisten
-    $searchQuery = "SELECT username FROM users";
+    $searchQuery = "SELECT username, profile_picture FROM users";
     $searchResult = $database->query($searchQuery);
 }
 ?>
@@ -37,7 +37,24 @@ if (isset($_GET['q']) && !empty($_GET['q'])) {
 <html>
 <head>
     <title>Suche</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+    function loadStylesheet() {
+      var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      var stylesheet = document.createElement('link');
+      stylesheet.rel = 'stylesheet';
+
+      if (screenWidth <= 767) {
+        // Pfad zum Stylesheet für Smartphones
+        stylesheet.href = 'styleS.css';
+      } else {
+        // Pfad zum Standard-Stylesheet für Desktop
+        stylesheet.href = 'style.css';
+      }
+
+      document.head.appendChild(stylesheet);
+    }
+    window.addEventListener('DOMContentLoaded', loadStylesheet);
+  </script>
 </head>
 <body>
     <div class="container">
@@ -49,21 +66,17 @@ if (isset($_GET['q']) && !empty($_GET['q'])) {
         <h2>Ergebnisse</h2>
         <?php while ($row = $searchResult->fetchArray(SQLITE3_ASSOC)) {
             $searchedUser = $row['username'];
+            $profilePicture = (isset($row['profile_picture'])&& $row['profile_picture'] != "" ?  $row['profile_picture'] : './pb.png');
             
             // Überprüfen, ob der Benutzer bereits diesem Profil folgt
             $checkFollowQuery = "SELECT COUNT(*) as count FROM follows WHERE follower_username = '$username' AND followee_username = '$searchedUser'";
             $checkFollowResult = $database->querySingle($checkFollowQuery);
 
-            echo "<div class='user'>
-                    <a href='profile.php?username=$searchedUser' class='username'>$searchedUser</a>";
+            echo "<div class='user'><a href='profile.php?username=$searchedUser' class='username'>
+            <span class=\"post-profilepicture\"><img src=\"$profilePicture\"></span>
+            <span>$searchedUser</span></a>";
             
-            if ($searchedUser !== $username) {
-                if ($checkFollowResult > 0) {
-                    echo "<a href='profile.php?unfollow=$searchedUser' class='button'>Entfolgen</a>";
-                } else {
-                    echo "<a href='profile.php?follow=$searchedUser' class='button'>Folgen</a>";
-                }
-            }
+
             
             echo "</div>";
         } ?>

@@ -2,7 +2,24 @@
 <html>
 <head>
     <title>Registrierung</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+    function loadStylesheet() {
+      var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      var stylesheet = document.createElement('link');
+      stylesheet.rel = 'stylesheet';
+
+      if (screenWidth <= 767) {
+        // Pfad zum Stylesheet für Smartphones
+        stylesheet.href = 'styleS.css';
+      } else {
+        // Pfad zum Standard-Stylesheet für Desktop
+        stylesheet.href = 'style.css';
+      }
+
+      document.head.appendChild(stylesheet);
+    }
+    window.addEventListener('DOMContentLoaded', loadStylesheet);
+  </script>
 </head>
 <body>
     <div class="container">
